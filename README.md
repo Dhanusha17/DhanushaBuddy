@@ -67,10 +67,7 @@ placement_prep_buddy/
    ```
 
 3. **Configure API Key:**
-   Copy `.env.example` to `.env` and fill in your Gemini API key:
-   ```env
-   GEMINI_API_KEY=your_gemini_api_key_here
-   ```
+   Configure the required environment variable (`GEMINI_API_KEY`) before running the application. Ensure you load this securely via a local `.env` file (see `.env.example`) or your system's environment manager.
 
 4. **Launch application locally:**
    ```bash
