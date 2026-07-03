@@ -62,7 +62,7 @@ else:
 
 # Footer credits
 st.sidebar.markdown(
-    '<div class="footer-text">DhanushaBuddy V1<br>Infosys Pragati Cohort 9 Capstone</div>', 
+    '<div class="footer-text">DhanushaBuddy V1<br>AI Placement Preparation Assistant</div>', 
     unsafe_allow_html=True
 )
 

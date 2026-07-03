@@ -2,7 +2,7 @@
 
 **DhanushaBuddy** is an AI-powered learning assistant designed to help students prepare for campus placements by providing personalized learning, coding practice, aptitude quizzes, HR interview practice, and AI-based guidance. 
 
-Developed as a Generative AI Capstone project for **Infosys Pragati Cohort 9**.
+Developed as a **Generative AI Placement Preparation Platform**.
 
 ---
 
@@ -11,8 +11,9 @@ Developed as a Generative AI Capstone project for **Infosys Pragati Cohort 9**.
 1. **🏡 Home Dashboard:** Welcome panel, overview, feature cards, and direct navigation links.
 2. **📚 Learn Concepts:** Structured technical learning (Java, Python, SQL, DBMS, OS, Computer Networks, OOP, Aptitude, Logical Reasoning). Uses Gemini to explain concepts with simple language, analogies, examples, key points, and interview tips.
 3. **💬 AI Chat:** General placement assistant for career guidance, debugging assistance, and interview advice.
-4. **🧠 Aptitude Quiz:** Generates dynamic quizzes (Percentage, Profit and Loss, Time & Work, Time & Distance, Ratio, Probability, Number System, Logical Reasoning) with 5 MCQs and step-by-step explanations.
-5. **💼 HR Mock Interview:** Interactive behavioral interviewer asking questions one-by-one (Self Intro, Strengths, Weaknesses, Projects, Teamwork, Leadership, Goals) with feedback scorecard evaluations.
+4. **💻 Coding Practice:** Write and execute Python and Java code for Easy, Medium, and Hard placement interview challenges with optimization feedback.
+5. **🧠 Aptitude Quiz:** Generates dynamic quizzes (Percentage, Profit and Loss, Time & Work, Time & Distance, Ratio, Probability, Number System, Logical Reasoning) with 5 MCQs and step-by-step explanations.
+6. **💼 HR Mock Interview:** Interactive behavioral interviewer asking questions one-by-one (Self Intro, Strengths, Weaknesses, Projects, Teamwork, Leadership, Goals) with feedback scorecard evaluations.
 
 ---
 
@@ -39,10 +40,13 @@ placement_prep_buddy/
 │   ├── learn_concepts.py    # Language & technical subject tutoring
 │   ├── ai_chat.py           # General Q&A placement chat
 │   ├── aptitude_quiz.py     # Quantitative & reasoning quizzes
+│   ├── coding_practice.py   # Hands-on programming practice
 │   └── hr_interview.py      # Conversational HR simulator
+├── services/
+│   ├── __init__.py
+│   └── gemini_service.py    # Google-GenAI SDK Client integration wrapper
 ├── utils/
 │   ├── __init__.py
-│   ├── gemini_helper.py     # Google-GenAI SDK Client integration wrapper
 │   └── prompts.py           # Standard prompt templates & system instructions
 ├── .env.example             # Example environment file
 ├── requirements.txt         # Project package requirements

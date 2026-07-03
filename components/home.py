@@ -1,6 +1,14 @@
+"""
+Home page component for DhanushaBuddy.
+Renders the landing page with statistics, features, and FAQs.
+"""
+import datetime
 import streamlit as st
 
-def render(*args, **kwargs):
+COHORT_INFO_SHORT = "AI Placement Preparation Assistant"
+COHORT_INFO_LONG = "Generative AI Placement Preparation Platform"
+
+def render():
     """
     Renders the Home page of the DhanushaBuddy AI Placement Preparation Assistant.
     """
@@ -8,7 +16,7 @@ def render(*args, **kwargs):
     st.markdown(
         """
         <div class="hero-banner">
-            <span class="badge-blue" style="background-color: rgba(255,255,255,0.2); color: white;">Infosys Pragati Cohort 9 Capstone</span>
+            <span class="badge-blue" style="background-color: rgba(255,255,255,0.2); color: white;">{cohort_short}</span>
             <h1 style="font-size: 2.75rem; font-weight: 800; margin-bottom: 0.5rem; color: white;">🎯 DhanushaBuddy</h1>
             <p style="font-size: 1.25rem; font-weight: 400; opacity: 0.95; margin-bottom: 1.5rem; color: white;">
                 Your Personal AI Placement Preparation Assistant
@@ -19,12 +27,13 @@ def render(*args, **kwargs):
                 aptitude questions, and polish your soft skills with automated behavioral feedback.
             </p>
         </div>
-        """,
+        """.format(cohort_short=COHORT_INFO_SHORT),
         unsafe_allow_html=True
     )
 
     # 2. Statistics Section
-    st.subheader("Placement Insights & Benchmarks")
+    st.subheader("Placement Insights & Benchmarks (Demo Data)")
+    st.caption("Note: These statistics are for demonstration purposes.")
     stat_col1, stat_col2, stat_col3, stat_col4 = st.columns(4)
     with stat_col1:
         st.markdown(
@@ -47,7 +56,7 @@ def render(*args, **kwargs):
             unsafe_allow_html=True
         )
 
-    st.markdown("<br>", unsafe_allow_html=True)
+    st.write("")
 
     # 3. Core Features Cards Grid
     st.subheader("Explore Preparation Modules")
@@ -124,22 +133,8 @@ def render(*args, **kwargs):
             """,
             unsafe_allow_html=True
         )
-        
-        st.markdown(
-            """
-            <div class="glass-card">
-                <span class="badge-blue">ATS COMPATIBILITY</span>
-                <h4>📄 Resume Review</h4>
-                <p style="color: #475569; font-size: 0.95rem; line-height: 1.5;">
-                    Upload your resume to get instant ATS scores, grammar checks, skill-gap analysis, 
-                    and bullet point recommendations tailored to software engineering job specs.
-                </p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
 
-    st.markdown("---")
+    st.divider()
 
     # 4. How It Works Section
     st.subheader("How DhanushaBuddy Accelerates Your Prep")
@@ -152,12 +147,13 @@ def render(*args, **kwargs):
         st.write("Ask queries, solve aptitude math quizzes, submit code codeblocks, or talk to the HR behavioral interviewer panel.")
     with how_col3:
         st.markdown("##### 3. Get AI Analysis")
-        st.write("Get instant evaluation cards, detailed analogies, step-by-step quiz corrections, or full ATS resume reports.")
+        st.write("Get instant evaluation cards, detailed analogies, step-by-step quiz corrections, or full mock interview reports.")
 
-    st.markdown("---")
+    st.divider()
 
-    # 5. Testimonials (Dummy Data)
-    st.subheader("What Students Say")
+    # 5. Testimonials (Demo Data)
+    st.subheader("Sample Student Feedback")
+    st.caption("Note: The testimonials below are for demonstration purposes.")
     test_col1, test_col2 = st.columns(2)
     with test_col1:
         st.markdown(
@@ -167,7 +163,7 @@ def render(*args, **kwargs):
                     "DhanushaBuddy's HR Mock Interview helped me build confidence. The feedback on structuring my answers 
                     using the STAR method made a huge difference in my actual interview!"
                 </p>
-                <h6 style="margin: 0; color: #1E3A8A;">— Rahul Sharma, Software Engineer at TCS</h6>
+                <h6 style="margin: 0; color: #1E3A8A;">— Rahul Sharma – Placed Student (Demo)</h6>
             </div>
             """,
             unsafe_allow_html=True
@@ -180,13 +176,13 @@ def render(*args, **kwargs):
                     "The Learn Concepts explanations are incredibly easy to understand. The analogies Gemini generates 
                     turned complex multi-threading topics in Java into simple day-to-day scenarios."
                 </p>
-                <h6 style="margin: 0; color: #1E3A8A;">— Sneha Patel, CSE Final Year Student</h6>
+                <h6 style="margin: 0; color: #1E3A8A;">— Sneha Patel – Final Year Student (Demo)</h6>
             </div>
             """,
             unsafe_allow_html=True
         )
 
-    st.markdown("---")
+    st.divider()
 
     # 6. Frequently Asked Questions (FAQ)
     st.subheader("Frequently Asked Questions")
@@ -201,13 +197,14 @@ def render(*args, **kwargs):
         st.write("It conducts an interactive, multi-turn interview asking questions one-by-one, evaluates your behavioral responses, and outputs an assessment scorecard detailing communication and confidence levels.")
 
     # 7. Professional Footer Section
+    current_year = datetime.datetime.now().year
     st.markdown(
         """
         <div class="footer-text">
             <p style="margin-bottom: 0.5rem; font-weight: 600;">🎯 DhanushaBuddy – Your Personal AI Placement Preparation Assistant</p>
-            <p style="margin-bottom: 0.5rem; font-size: 0.8rem; color: #94A3B8;">Infosys Pragati Cohort 9 Generative AI Capstone Project</p>
-            <p style="font-size: 0.8rem; color: #94A3B8;">&copy; 2026 DhanushaBuddy. All rights reserved.</p>
+            <p style="margin-bottom: 0.5rem; font-size: 0.8rem; color: #64748B;">{cohort_long}</p>
+            <p style="font-size: 0.8rem; color: #64748B;">&copy; {year} DhanushaBuddy. All rights reserved.</p>
         </div>
-        """,
+        """.format(cohort_long=COHORT_INFO_LONG, year=current_year),
         unsafe_allow_html=True
     )
