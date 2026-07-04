@@ -3,6 +3,7 @@ Home page component for DhanushaBuddy.
 Renders the landing page with statistics, features, and FAQs.
 """
 import datetime
+# pyrefly: ignore [missing-import]
 import streamlit as st
 
 COHORT_INFO_SHORT = "AI Placement Preparation Assistant"
